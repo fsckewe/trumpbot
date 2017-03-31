@@ -41,10 +41,6 @@ while True:
 	
 	tweetstring = y[0] + ' https://www.youtube.com/watch?v=' + x[0] + ' ' + z[0]
 	#api.update_status(tweetstring)
-	print tweetstring
-	print y
-	print x
-	print z
 	sleep(5)
 	
 
