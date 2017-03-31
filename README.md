@@ -13,10 +13,10 @@ Uncomment first line and comment next 4 lines
   
 Add your own tbcreds.py with the following:
 
-CONSUMER_KEY = " "
-CONSUMER_SECRET = " "
-ACCESS_KEY = " "
-ACCESS_SECRET = " "
+	CONSUMER_KEY = " "
+	CONSUMER_SECRET = " "
+	ACCESS_KEY = " "
+	ACCESS_SECRET = " "
 
 
 
