@@ -1,4 +1,9 @@
 # trumpbot
+Start here to get twitter setup for running an application:
+
+https://www.digitalocean.com/community/tutorials/how-to-create-a-twitterbot-with-python-3-and-the-tweepy-library
+
+
 There are two bots here:
 
 trumpbot.py - tweets random alex jones videos at donnie at an interval of your choosing
