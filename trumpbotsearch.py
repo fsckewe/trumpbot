@@ -7,7 +7,6 @@ import tweepy
 import random
 from time import sleep
 from tbcreds import *
-#from random import *
 
 #setup auth
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -26,37 +25,47 @@ intro_lines = intro.readlines()
 intro.close()
 intro_lines = [x.strip() for x in intro_lines]
 
-i=0
 
-for tweet in tweepy.Cursor(api.search, q='#maga').items(100):
-    try:
-        #console output info for debugging/status
-        print('\n#######################\nTweet by: @' + tweet.user.screen_name)
-        print tweet.id
-        print tweet.text
-        print tweet.retweeted
-        
-        #check for retweets, either offical tweetid status or the addition of RT/RETWEET        
-        if not tweet.retweeted and 'RT @' not in tweet.text and 'RETWEET' not in tweet.text:
-			print ('\n\nGood tweet for reply\n\n')
-			x = random.sample(video_lines, 1) #pick random video
-			y = random.sample(intro_lines, 1) #pick random intro of reply tweet
-			
-			#build reply message
-			m = "@" + tweet.user.screen_name + " " + y[0] + " Did you see this https://www.youtube.com/watch?v=" + x[0] + " !!"
-			
-			#api.update_status(m, tweet.id)
-			print('Replied to the tweet')
-			i+=1
-					
-	sleep(1)
+while True:
 	
-	if i > 2:
-		break
+	i=0
 
-    except tweepy.TweepError as e:
-        print(e.reason)
+	for tweet in tweepy.Cursor(api.search, q='#maga').items(100):
+		try:
+			#console output info for debugging/status
+			print('\n#######################\nTweet by: @' + tweet.user.screen_name)
+			print tweet.id
+			print tweet.text
+			print tweet.retweeted
+        
+			#check for retweets, either offical tweetid status or the addition of RT/RETWEET        
+			if not tweet.retweeted and 'RT @' not in tweet.text and 'RETWEET' not in tweet.text:
+				print ('\nGood tweet for reply\n')
+				x = random.sample(video_lines, 1) #pick random video
+				y = random.sample(intro_lines, 1) #pick random intro of reply tweet
+				
+				#build reply message and ship it
+				m = "@" + tweet.user.screen_name + " " + y[0] + " Did you see this https://www.youtube.com/watch?v=" + x[0] + " !!"
+				#api.update_status(m, tweet.id)
+				print('Replied to the tweet')
+				i+=1
+				
+			sleep(5)
+	
+			if i > 1:
+				print ('\n####\nThat\'s enough for now\n####')
+				break
 
-    except StopIteration:
-        break
+		except tweepy.TweepError as e:
+			print(e.reason)
+
+		except StopIteration:
+			break
+	print('\nwaiting...')
+	sleep(200)
+	print('\nstill waiting...')
+	sleep(200)
+	print('\njust a little more waiting...')
+	sleep(200)
+	
 
