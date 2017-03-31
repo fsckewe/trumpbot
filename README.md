@@ -1,8 +1,11 @@
 # trumpbot
 bot that tweets trump Alex Jones videos
 
+Getting started:
 
-Uncomment first line and comment next 4 lines
+1) Change sleep to something more than 5 seconds.
+
+2) Uncomment first line and comment next 4 lines
 
 	#api.update_status(tweetstring)
 	print tweetstring
@@ -11,7 +14,7 @@ Uncomment first line and comment next 4 lines
 	print z
 	
   
-Add your own tbcreds.py with the following:
+3) Add your own tbcreds.py with the following:
 
 	CONSUMER_KEY = " "
 	CONSUMER_SECRET = " "
