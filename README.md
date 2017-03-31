@@ -1,8 +1,10 @@
 # trumpbot
 There are two bots here:
+
 trumpbot.py - tweets random alex jones videos at donnie at an interval of your choosing
 trumpbotsearch.py - searches for #maga and replies with random greeting and random video
 
+##########################
 trumpbot.py - Getting started: uses trumpbot.py, greetings.txt, videos.txt and hashtags.txt
 
 1 - Change sleep to something more than 5 seconds.
@@ -20,7 +22,7 @@ trumpbot.py - Getting started: uses trumpbot.py, greetings.txt, videos.txt and h
 
 4 - edit greetings.txt, videos.txt and hashtags.txt as you see fit
 
-
+############################
 trumpbotsearch.py - Getting started: uses trumpbotsearch.py, intro.txt and videos.txt 
 
 1 - modify search term (q=) and number of results if you wish
