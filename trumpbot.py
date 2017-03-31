@@ -7,7 +7,6 @@ import tweepy
 import random
 from time import sleep
 from tbcreds import *
-#from random import *
 
 #setup auth
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
